@@ -9,7 +9,10 @@
     <script src="https://kit.fontawesome.com/792c2e8fcc.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   
+    
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    
 </head>
 <body>
     <nav data-toggled="false" data-transitionable="false">
@@ -56,173 +59,63 @@
             <div class="sub">SUBJECT</div>
             <div class="dropdown">
                 <button class="sub-dropdown-toggle" onclick="subToggleDropdown()"><i class="fa-solid fa-angle-down"></i></button>
-                <ul class="sub-dropdown-menu" id="subDropdownMenu">
-                    <li>Topic Name</li>
-                    <li>Topic Name</li>
-                    <li>Topic Name</li>
-                    <li>Topic Name</li>
+                <ul class="sub-dropdown-menu subject-select-mobile" id="subDropdownMenu">
+                    <li value="0"><%= data[0].sem[0].subjects[0].subjectName %>
+                    </li>
+                    <li value="1"><%= data[0].sem[0].subjects[1].subjectName %>
+                    </li>
+                    <li value="2"><%= data[0].sem[0].subjects[2].subjectName %>
+                    </li>
+                    <li value="3"><%= data[0].sem[0].subjects[0].subjectName %>
+                    </li>
                 </ul>
             </div>
         </div>
         <div class="semester">
-            <div class="sem">SEM 1</div>
+            <div class="sem">SEM <span class="sem-no">1</span></div>
             <div class="dropdown">
                <button class="sem-dropdown-toggle" onclick="semToggleDropdown()"><i class="fa-solid fa-angle-down"></i></button>
-                <ul class="sem-dropdown-menu" id="semDropdownMenu">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
+                <ul class="sem-dropdown-menu sem-select" id="semDropdownMenu">
+                    <li value="0">1</li>
+                    <li value="1">2</li>
+                    <li value="2">3</li>
+                    <li value="3">4</li>
+                    <li value="4">5</li>
+                    <li value="5">6</li>
+                    <li value="6">7</li>
+                    <li value="7">8</li>
                 </ul>
             </div>
         </div>
         <div class="units">
-            <div class="unit">UNIT 1</div>
+            <div class="unit">UNIT <span class="unit-no">1</span></div>
             <div class="dropdown">
                 <button class="unit-dropdown-toggle" onclick="unitToggleDropdown()"><i class="fa-solid fa-angle-down"></i></button>
-                <ul class="unit-dropdown-menu" id="unitDropdownMenu">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
+                <ul class="unit-dropdown-menu unit-select" id="unitDropdownMenu">
+                    <li value="0">1</li>
+                    <li value="1">2</li>
+                    <li value="2">3</li>
+                    <li value="3">4</li>
+                    <li value="4">5</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div class="info">
-        <div class="subjects-display">
-            <div>SUBJECT 1</div>
-            <div>SUBJECT 2</div>
-            <div>SUBJECT 3</div>
-            <div>SUBJECT 4</div>
+        <div class="subjects-display subject-select">
+            <div value="0"><%= data[0].sem[0].subjects[0].subjectName %></div>
+            <div value="1"><%= data[0].sem[0].subjects[1].subjectName %></div>
+            <div value="2"><%= data[0].sem[0].subjects[2].subjectName %></div>
+            <div value="3"><%= data[0].sem[0].subjects[0].subjectName %></div>
         </div>
         <div class="topics">
-            <div class="card">
+            <!-- <div class="card">
                 <div class="card-image"></div>
                 <div class="card-text">
                     <h6>Topic Name</h6>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
-                </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
