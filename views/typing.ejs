@@ -92,7 +92,11 @@
                 <p>Caps Lock: <span></span></p>
             </div>
             <p class="given-text">
-                An operating system 
+                <% if (content) { %>
+                    <%= content %> 
+                  <% } else { %>
+                    kuch bhi
+                  <% } %>                  
             </p>
             <div id="after-text" class="hidden"></div>
             <input type="text" id="myInput" autocomplete="off">
