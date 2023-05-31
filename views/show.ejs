@@ -16,16 +16,16 @@
     <nav data-toggled="false" data-transitionable="false">
         <div class="logo">
             <div class="logo-name">
-                <a href="/" class="grow-link">Semicolon</a>
+                <a href="http://127.0.0.1:5500/index.html" class="grow-link">Semicolon</a>
             </div>
         </div>
         <div class="nav-mobile-section">
         <div class="features">
             <div class="read-link">
-                <a href="#" class="grow-link">READ</a>
+                <a href="http://localhost:8080/read" class="grow-link">READ</a>
             </div>
             <div class="test-link">
-                <a href="#" class="grow-link">TEST</a>
+                <a href="#" onclick="return false;" class="grow-link">TEST</a>
             </div>
         </div>
         <div class="about">
@@ -55,11 +55,11 @@
         <article data-index="0" data-status="active">
             <div class="heading-section">
                 <div class="heading">
-                    <p>Operating System</p>
+                    <p> <%= data[0].sem[0].subjects[subjectIndex].units[unitIndex].topics[topicIndex].name %></p>
                 </div>
             </div>
             <div class="text-section">
-                <div class="text"></div>
+                <div class="text"><%= data[0].sem[0].subjects[subjectIndex].units[unitIndex].topics[topicIndex].content %></div>
             </div>
             <div class="move-btns">
                 <div class="left-btn" onclick="handleLeftBtn()">
