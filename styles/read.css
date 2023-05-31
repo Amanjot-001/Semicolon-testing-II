@@ -235,7 +235,7 @@ a {
 }
 
 .sub-dropdown-menu li {
-    display: flex;
+    display: none;
     flex-direction: column;
     padding: 10px;
     border-bottom: 1px solid #1e2345;
@@ -281,6 +281,7 @@ a {
     align-items: center;
     border-bottom: 1px solid #1e2435;
     color: rgba(116, 112, 131);
+    cursor: pointer;
 }
 
 .subjects-display>div:last-child {
@@ -306,11 +307,13 @@ a {
     /* border: 1px solid #1e2345; */
     margin-bottom: 1rem;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .card-image {
     height: 65%;
     border-bottom: 1px solid #1e2345;
+    z-index: -1;
 }
 
 .card-text {
