@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/read.css">
+    <script src="https://kit.fontawesome.com/792c2e8fcc.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav data-toggled="false" data-transitionable="false">
+        <div class="logo">
+            <div class="logo-name">
+                <a href="http://127.0.0.1:5500/index.html" class="grow-link">Semicolon</a>
+            </div>
+        </div>
+        <div class="nav-mobile-section">
+        <div class="features">
+            <div class="read-link">
+                <a href="http://localhost:8080/read" class="grow-link">READ</a>
+            </div>
+            <div class="test-link">
+                <a href="http://localhost:8080/test" class="grow-link">TEST</a>
+            </div>
+        </div>
+        <div class="about">
+            <div class="home-link-icon">
+               <a href="/" class="border-link"><i class="fa-solid fa-house"></i></a>
+            </div>
+            <div class="about-link-icon">
+                <a href="" class="border-link"><i class="fa-solid fa-circle-info"></i></a>
+            </div>
+            <div class="github-link-icon">
+                <a href="" class="border-link"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+        <div class="profile">
+            <div class="profile-text">
+                <a href="/" class="grow-link">REGISTER</a>
+            </div>
+        </div>
+    </div>
+        <button id="nav-toggle-btn" type="button" onclick="handleNavToggle()">
+            <span>Menu</span>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+
+    <div class="selection">
+        <div class="subjects">
+            <div class="sub">SUBJECT</div>
+            <div class="dropdown">
+                <button class="sub-dropdown-toggle" onclick="subToggleDropdown()"><i class="fa-solid fa-angle-down"></i></button>
+                <ul class="sub-dropdown-menu" id="subDropdownMenu">
+                    <li>Topic Name</li>
+                    <li>Topic Name</li>
+                    <li>Topic Name</li>
+                    <li>Topic Name</li>
+                </ul>
+            </div>
+        </div>
+        <div class="semester">
+            <div class="sem">SEM 1</div>
+            <div class="dropdown">
+               <button class="sem-dropdown-toggle" onclick="semToggleDropdown()"><i class="fa-solid fa-angle-down"></i></button>
+                <ul class="sem-dropdown-menu" id="semDropdownMenu">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                </ul>
+            </div>
+        </div>
+        <div class="units">
+            <div class="unit">UNIT 1</div>
+            <div class="dropdown">
+                <button class="unit-dropdown-toggle" onclick="unitToggleDropdown()"><i class="fa-solid fa-angle-down"></i></button>
+                <ul class="unit-dropdown-menu" id="unitDropdownMenu">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="info">
+        <div class="subjects-display">
+            <div>SUBJECT 1</div>
+            <div>SUBJECT 2</div>
+            <div>SUBJECT 3</div>
+            <div>SUBJECT 4</div>
+        </div>
+        <div class="topics">
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-text">
+                    <h6>Topic Name</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/scripts/read.js"></script>
+</body>
+</html>
