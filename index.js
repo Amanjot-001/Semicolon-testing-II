@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-let data;
+let data = '';
 let topicIndex=0, subjectIndex=0, unitIndex=0, content;
 
 app.use("/styles", express.static(__dirname + "/styles"));
@@ -62,7 +62,6 @@ app.get('/dog', async (req, res) => {
 
 
 app.get('/read', async (req, res) => {
-    await fetchData();
     res.render('read', {data});
 })
 
@@ -95,8 +94,10 @@ app.post('/showPost', (req, res) => {
     res.sendStatus(200);
 })
 
-app.get("*", (req,res) => {
+app.get("*", async(req,res) => {
     res.sendFile(path.join(__dirname, "./index.html"))
+    if(data == '')
+    await fetchData();
 })
 
 app.listen('8080', () => {
