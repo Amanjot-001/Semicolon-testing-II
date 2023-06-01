@@ -18,7 +18,7 @@
     <nav data-toggled="false" data-transitionable="false">
         <div class="logo">
             <div class="logo-name">
-                <a href="http://127.0.0.1:5500/index.html" class="grow-link">Semicolon</a>
+                <a href="http://localhost:8080/" class="grow-link">Semicolon</a>
             </div>
         </div>
         <div class="nav-mobile-section">
@@ -110,12 +110,17 @@
             <div value="3"><%= data[0].sem[0].subjects[0].subjectName %></div>
         </div>
         <div class="topics">
-            <!-- <div class="card">
-                <div class="card-image"></div>
-                <div class="card-text">
-                    <h6>Topic Name</h6>
+            <% let topicIndex = 0; %>
+            <% for(let topic of data[0].sem[0].subjects[0].units[0].topics) { %>
+                <div class="card" value =<%= topicIndex %>>
+                <div class="card-image">
                 </div>
-            </div> -->
+                <div class="card-text">
+                    <h6><%= topic.name %></h6>
+                    </div>
+                </div>
+                <% topicIndex++; %>
+                <% } %>
         </div>
     </div>
 
