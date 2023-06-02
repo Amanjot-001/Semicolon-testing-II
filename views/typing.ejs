@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="profile">
-                <a href="" class="profile-link grow-link">REGISTER</a>
+                <a href="http://localhost:8080/signin" class="profile-link grow-link">REGISTER</a>
             </div>
         </div>
         <button id="nav-toggle-btn" type="button" onclick="handleNavToggle()">
@@ -89,7 +89,7 @@
         <div class="typing-area">
             <div class="focus-popup">
                 <div class="focus-popup-wrapper">
-                    <div class="heading"><i class="fa-solid fa-arrow-pointer"></i>  Click Here To Start!</div>
+                    <div class="heading"><i class="fa-solid fa-arrow-pointer"></i> Click Here To Start!</div>
                 </div>
             </div>
             <div class="caret"></div>
@@ -98,16 +98,15 @@
             </div>
             <p class="given-text">
                 <% if (content) { %>
-                    <%= content %> 
-                  <% } else { %>
-                    kuch bhi
-                  <% } %>                  
+                    <%= content %>
+                        <% } else { %>
+                            kuch bhi
+                            <% } %>
             </p>
             <div id="after-text" class="hidden"></div>
             <input type="text" id="myInput" autocomplete="off">
         </div>
     </div>
-
     <script src="/scripts/typing.js"></script>
 </body>
 
