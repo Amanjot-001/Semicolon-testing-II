@@ -28,9 +28,8 @@ let inputStarted = false;
 let clockHover = false; 
 let intervalId = null;
 
-let typedWords = 0;
-let correctWords = 0;
 let totalWords = 1;
+let totalCharsTyped = 0;
 let correctCharsTyped = 0;
 let currentWordTyping = 0;
 let timerForScore = true;
@@ -59,9 +58,9 @@ const capsMsg = document.querySelector('.caps-lock>p>span')
 
 const width = window.innerWidth || document.documentElement.clientWidth;
 const height = typingArea.getBoundingClientRect().height;
-console.log(height);
+// console.log(height);
 maxLines = Math.floor((height-35)/36) - 3;
-console.log(maxLines);
+// console.log(maxLines);
 
 document.addEventListener('DOMContentLoaded', function () {
     var defaultTheme = 'theme1';
@@ -78,7 +77,7 @@ window.addEventListener('resize', () => {
     location.reload();
 })
 
-console.log(width);
+// console.log(width);
 input.addEventListener("keyup", function (event) {
     if (event.getModifierState("CapsLock")) {
         capsLockIndicator.style.visibility = 'visible';
@@ -517,50 +516,14 @@ function totalWordsInText(originalString) {
 }
 
 function Words() {
-    input.value = input.value.replace(/\s+/g, " ").trim();
-    let toCheckFirstWord = true;
-    let toCheckOtherWords = false;
-    for (let i = 0; i < input.value.length; i++) {
-        if (toCheckOtherWords === true)
-            toCheckFirstWord = true;
-        if (input.value[i] === ' ') {
-            typedWords++;
-            toCheckFirstWord = false;
-            toCheckOtherWords = true;
-        }
-    }
-    if (toCheckFirstWord === true && input.value.length < originalString.length)
-        typedWords++;
-    if (input.value.length >= originalString.length)
-        typedWords++;
-
-    let flag = true;
     for (let i = 0; i < input.value.length; i++) {
         let index = document.querySelector(`p.given-text span.span${i}`)
-        if ((input.value[i] !== originalString[i] && input.value[i] !== ' ') || index.classList.contains('notTyped')) {
-            flag = false;
-        }
-        if (flag === true && input.value[i] === ' ' && input.value[i] === originalString[i]) {
-            correctWords++;
-        }
-        if (flag === false && input.value[i] === ' ') {
-            flag = true;
-        }
-        if (flag === true && i + 1 === input.value.length && originalString[i + 1] === ' ')
-            correctWords++;
-        if (flag === true && i + 1 === originalString.length)
-            correctWords++;
-    }
-
-    for(let i=0; i < input.value.length; i++){
-        let index = document.querySelector(`p.given-text span.span${i}`)
-        if(input.value[i] === originalString[i] && !index.classList.contains('notTyped'))
+        if (input.value[i] === originalString[i] && !index.classList.contains('notTyped'))
             correctCharsTyped++;
     }
-    console.log(correctCharsTyped)
-    console.log(input.value.length);
+    totalCharsTyped = input.value.length;
 }
-
+    
 function timer() {
     intervalId = setInterval(() => {
         cnt++;
@@ -603,11 +566,12 @@ function info() {
 }
 
 function final() {
+    typingArea.style.paddingTop = '35px'
     clearInterval(intervalId);
     input.disabled = true;
     Words();
-    S = ((correctCharsTyped/5) / (cnt / 60)).toFixed(2);
-    A = (((correctWords / (cnt / 60)) * 100) / (typedWords / (cnt / 60))).toFixed(2);
+    S = ((correctCharsTyped / 5) / (cnt / 60)).toFixed(2);
+    A = ((correctCharsTyped / totalCharsTyped) * 100).toFixed(2);
     score.textContent = `${S} wpm`;
     accuracy.textContent = `${A} %`;
     timeSpent.textContent = `${(cnt / 60).toFixed(2)} min`;
@@ -628,7 +592,7 @@ function moveCaret(index) {
   
   function moveCaretDown(afterIndex, index) {
     line++;
-    console.log(line, totalLines);
+//     console.log(line, totalLines);
     let caretLeft = 0;
     caret.style.left = `${caretLeft}px`;
     let caretTop = afterIndex.getBoundingClientRect().top - firstWordTop + 36;
@@ -642,7 +606,7 @@ function moveCaret(index) {
         typingArea.scrollTop = scrollDistance;
       }
     }
-    console.log(scrollDistance);
+//     console.log(scrollDistance);
   }
   
   function moveCaretBack(index) {
@@ -691,7 +655,6 @@ function handlePopupInputButton() {
         input.focus();
     }
 }
-
 
 focusPopup.addEventListener('click', () => {
     input.focus();
