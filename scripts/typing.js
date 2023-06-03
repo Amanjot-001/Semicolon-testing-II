@@ -398,7 +398,7 @@ input.addEventListener("input", (e) => {
                 }
                 return;
             }
-            if (currentWordTyping >= TotalWords) {
+            if (currentWordTyping >= totalWords) {
                 final();
                 ended = true;
                 return;
